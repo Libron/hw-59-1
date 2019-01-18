@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const Movie = props => {
-    return (
-        <li>
-            <input type="text" name="movie" value={props.title} onChange={props.changeTitle}/>
-            <button onClick={props.removeMovie}>remove</button>
-        </li>
-    );
-};
+class Movie extends Component {
+    shouldComponentUpdate(nextProps) {
+        return nextProps.title !== this.props.title;
+    };
+
+    render() {
+        return (
+            <li>
+                <input type="text" name="movie" value={this.props.title} onChange={this.props.changeTitle}/>
+                <button onClick={this.props.removeMovie}>remove</button>
+            </li>
+        );
+    }
+}
 
 export default Movie;
