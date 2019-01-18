@@ -1,0 +1,22 @@
+.movie-form {
+    padding: 20px 0;
+    box-shadow: 0 3px 14px 0 rgba(50, 50, 50, 0.75);
+}
+
+.movie-form label {
+    margin-right: 5px;
+    font-weight: bold;
+    color: #4db6ac;
+}
+
+.movie-form input {
+    padding: 5px 10px;
+    border-color: #4db6ac;
+}
+
+.movie-form .btn-add {
+    padding: 7px 20px;
+    border: none;
+    background: #4db6ac;
+    color: #fff;
+}
