@@ -13,10 +13,16 @@ class App extends Component {
       ]
     };
 
-    addMovie = event => {
+    addMovieHandler = event => {
         event.preventDefault();
-        console.log('Hello');
+        const movies = [...this.state.movies];
+        const userInput = document.getElementById('title').value;
+        const uniqueID = this.getUniqueID();
+        movies.push({title: userInput, id: uniqueID});
+        this.setState({movies});
     };
+
+    getUniqueID = () => (Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 101));
 
     changeMovieTitle = (event, id) => {
       const movies = [...this.state.movies];
@@ -37,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Form formSubmitted={event => this.addMovie(event)}/>
+        <Form formSubmitted={event => this.addMovieHandler(event)}/>
           <Movies
               list={this.state.movies}
               changeTitle={this.changeMovieTitle}
