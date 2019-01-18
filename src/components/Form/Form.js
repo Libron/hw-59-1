@@ -4,9 +4,9 @@ import './Form.css';
 const Form = props => {
     return (
     <form className="movie-form" onSubmit={event => props.formSubmitted(event)}>
-            <label htmlFor="title">Add movie:
-            <input type="text" name="title" id="title"/></label>
-            <button type="submit">Add</button>
+            <label htmlFor="title">Add movie:</label>
+            <input type="text" name="title" id="title" placeholder="Sponge Bob" />
+            <button type="submit" className="btn-add">Add</button>
         </form>
     );
 };

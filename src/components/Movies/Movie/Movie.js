@@ -7,7 +7,7 @@ class Movie extends Component {
 
     render() {
         return (
-            <li>
+            <li className="movie-item">
                 <input type="text" name="movie" value={this.props.title} onChange={this.props.changeTitle}/>
                 <button onClick={this.props.removeMovie}>remove</button>
             </li>
